@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="calculator">
+<head>
+	<title>Calculator</title>
+</head>
+<body ng-controller="mainCtrl">
+	<h2>Calculate</h2>
+	<div>
+		<form role="form" name="calcInput" ng-submit="calculate()">
+			<input type="number" ng-model="calc.first">
+			<select name="operator" ng-model="calc.operator">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+			</select>
+			<input type="number" ng-model="calc.second">
+			<button type="submit">=</button>
+		</form>
+		<span>{{answer}}</span>
+	</div>
+	<h2>History</h2>
+	<div>
+		<p ng-repeat="history in answers">{{history}}</p>
+	</div>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="mainCtrl.js"></script>
+	<script src="mainService.js"></script>
+</body>
+</html>
